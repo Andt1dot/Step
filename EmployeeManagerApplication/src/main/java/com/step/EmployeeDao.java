@@ -70,6 +70,31 @@ public void getAllEmployeeDb(){
 }
 
 
+public boolean authorizationApp(String log,String pass){
+  String sqlQuery = "SELECT * FROM manager.authorization where login ='"+log+"'and password ='"+pass+"'";  
+  Connection conn = initConnection();  
+  Statement st = null;   
+  
+     try{
+        if(!conn.isClosed()&&conn!=null){
+           st=conn.createStatement();
+           ResultSet result = st.executeQuery(sqlQuery);  
+          
+           while(result.next()){  
+           String login = result.getString("login");
+           String password = result.getString("password");
+                   
+             if(password.contentEquals(pass)&&login.contentEquals(log))
+                return true;        
+           }
+         } 
+      }
+           catch(SQLException ex){  
+               System.out.println(ex.getMessage());
+    }
+     return false;
+  }
+
 
 
 public void addMultipleEmployee(List<Employee> listEmployee){
@@ -110,7 +135,7 @@ public void addMultipleEmployee(List<Employee> listEmployee){
 }
 
 
-void searchEmployeeDb() throws IOException{
+public void searchEmployeeDb() throws IOException{
     System.out.println("\t\t\t\t\t**************| Menu Search Employee for Database|*******");
     System.out.println("1. Search Name");
     System.out.println("2. Search Surname");
@@ -177,7 +202,7 @@ public List<Employee> viewSearchEmployeeDb(String sqlQuery, boolean showApp){
            employeeList.add(new Employee(idEmployeeDb,name,surname,genre,age,identity,birthdate));
            
            }      
-        }else
+        }else   
             System.out.println("Error: Can't possible connection to database, please repeat operation, if again error please contact your programmer !!! ");
         
     }catch(SQLException ex){
@@ -251,7 +276,7 @@ public void editEmployeeDb() throws IOException{
      operationExecuteSQL(sqlQuery); 
 }
     
-void operationExecuteSQL(String sqlQuery){
+public boolean operationExecuteSQL(String sqlQuery){
     Connection conn = initConnection();    
         Statement st=null;
         try {
@@ -261,12 +286,15 @@ void operationExecuteSQL(String sqlQuery){
                 
                if(sqlQuery.contains("insert".toLowerCase())||sqlQuery.contains("insert".toUpperCase())||sqlQuery.contains("Insert")){
                   System.out.println("SUCCES: The employee was successfully added and saved to the database !!!");     
+                  return true;
                }
                else if(sqlQuery.contains("delete".toLowerCase())||sqlQuery.contains("delete".toUpperCase())||sqlQuery.contains("Delete")){        
                    System.out.println("SUCCES: The employee was successfully delete to the database !!!");    
+                   return true;
                }
                else if(sqlQuery.contains("update".toLowerCase())||sqlQuery.contains("update".toUpperCase())||sqlQuery.contains("Update")){
                    System.out.println("SUCCES: The employee was successfully update to the database");
+                   return true;
                }
                
             } else  {
@@ -282,6 +310,7 @@ void operationExecuteSQL(String sqlQuery){
                 System.out.println(ex.getMessage());
             }
         }
+        return false;
 }
 
 public void deletedEmployeeDb() throws IOException{
@@ -289,7 +318,7 @@ public void deletedEmployeeDb() throws IOException{
     System.out.println("Choose Nr Employee to be deleted = ");
     idEmployeeDb=Validator.verificationInputInteger(reader.readLine());          
      //send query in method 
-     operationExecuteSQL("DELETE manager.employee where id_employee ="+idEmployeeDb); 
+     operationExecuteSQL("DELETE FROM manager.employee where id_employee ="+idEmployeeDb); 
 }
 
 
