@@ -40,7 +40,7 @@ public class EmployeeManager implements IEmployeeManager,Validator {
     
 
     @Override
-    public void addEmployee() throws IOException{
+    public void addEmployee() throws IOException {
         System.out.println("\t\t\t\t\t**************|Add Employee|*******");   
         
         System.out.println("Insert Name :: ");   
@@ -81,7 +81,6 @@ public class EmployeeManager implements IEmployeeManager,Validator {
 
          } 
      
-    
     public void searchMenu(){
         System.out.println("\t\t\t\t\t**************|Search Employee|*******");
         System.out.println("1. Search Name");
