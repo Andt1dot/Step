@@ -7,14 +7,16 @@ public class Product {
     double purchasePrice;
     double sellingPrice;
     LocalDate expirationDate;
-    String description;    
+    String description;
+    int amountProduct;    
 
-    public Product(String name, double purchasePrice, double sellingPrice, LocalDate expirationDate, String description) {
+    public Product(String name, double purchasePrice, double sellingPrice, LocalDate expirationDate, String description, int amountProduct) {
         this.name = name;
         this.purchasePrice = purchasePrice;
         this.sellingPrice = sellingPrice;
         this.expirationDate = expirationDate;
         this.description = description;
+        this.amountProduct = amountProduct;
     }
 
     public void setName(String name) {
@@ -31,6 +33,14 @@ public class Product {
 
     public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public int getAmountProduct() {
+        return amountProduct;
+    }
+
+    public void setAmountProduct(int amountProduct) {
+        this.amountProduct = amountProduct;
     }
 
     public void setDescription(String description) {
