@@ -1,9 +1,7 @@
 package com.system.model;
 import com.system.dao.Dao;
-import com.system.enums.Days;
-import com.system.enums.TransportNumber;
 import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 public class Customer {
  String name;
@@ -90,26 +88,5 @@ public class Customer {
     }
 
     
-public byte paymentTravel(String customerIdentityCard){
-    customer.setCustomer(dao.checkExistCustomer(customerIdentityCard));    
-    if(customer.getCustomer()!=null){
-    
-      if(customer.getBalanceCard()<5)
-           return 1;
-    
-      else if(customer.getBalanceCard()>=5){
-     
-          double paymentTravel = customer.getBalanceCard() - 5;
-         
-          // 1. this --> Update customer balance 
-         dao.updateBalanceCard(paymentTravel);
-          // 2. this --> Save dates about travel
-         newTravel = new Travel(customer.getCustomer(),TransportNumber.One,Days.Monday,LocalTime.now(),paymentTravel); 
-           return 0;
-       }
-    }
-    return 2;
-}
-
 }
 

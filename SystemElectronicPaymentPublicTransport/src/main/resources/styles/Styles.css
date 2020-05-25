@@ -1,8 +1,8 @@
-.button {
-    -fx-font-weight: bold;
+#achorPane{
+    -fx-background-image: url("\menu.jpg");
+    -fx-background-repeat: no-repeat;
 }
 
-#pane{
-    -fx-background-image: url("C:\Users\Ant1dot\Desktop\soft\menu(300,380).jpg");
-    -fx-background-repeat: stretch; 
+.succes{
+    -fx-background-color: red;
 }

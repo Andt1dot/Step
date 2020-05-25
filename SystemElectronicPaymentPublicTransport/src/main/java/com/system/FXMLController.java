@@ -1,46 +1,39 @@
 package com.system;
 
-import com.system.model.Customer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 
 public class FXMLController implements Initializable {
     
-    Customer customer =  new Customer();    
+    Transaction transaction = new Transaction();
      
     @FXML
     private TextField textField;
-                 
+         
+    @FXML
+    private AnchorPane anchorPane;
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-   
- 
-          // if transaction succes -> show image green 
-               // else if no money -> show image red
-                     // else -> no change image
-   
-
+         
         textField.textProperty().addListener((obs, oldText, newText) -> {
-          byte transactionStatus = customer.paymentTravel(newText);
+          //byte transactionStatus = //transaction.paymentTravel(newText);
         
-            switch (transactionStatus) {
-                case 0:
-                //.........    
-                    break;
-                case 1:
-                //........    
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-          
-     
+        if(newText.equals("1")){
+              System.out.println("succes");
+       // anchorPane.setId("succes");
+        anchorPane.getStyleClass().add("succes");
+          }
+          else
+            System.out.println("error");
+                      
         });
-
-
 }
 }
