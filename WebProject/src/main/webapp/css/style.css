@@ -1,0 +1,138 @@
+.index{
+  background-image: url("../img/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.other
+{
+	background-image: url("../img/2.png");
+}
+
+
+
+input#input-name.form-control
+{
+    background:transparent;
+	  color: white;
+	  border-radius: 5px;
+    border:1px solid white;
+    padding: 5px;
+}
+
+input#input-lastname.form-control
+{
+    background:transparent;
+	  color: white;
+	  border-radius: 5px;
+    border:1px solid white;
+    padding: 5px;
+}
+
+
+input#input-date.form-control
+{
+    background:transparent;
+	color: white;
+	border-radius: 5px;
+    border:1px solid white;
+    padding: 5px;
+}
+
+input#input-tel.form-control
+{
+    background:transparent;
+	color: white;
+	border-radius: 5px;
+    border:1px solid white;
+    padding: 5px;
+}
+
+input#input-email.form-control
+{
+    background:transparent;
+  	color: white;
+	border-radius: 5px;
+    border:1px solid white;
+    padding: 5px;
+}
+
+
+input#search.form-control
+{
+	  background:transparent;
+	  color: white;
+	  border-radius: 5px;
+      border:1px solid white;
+       padding: 5px;
+}
+
+input[type="text"],[type="email"],[type="tel"],[type="password"]::-moz-placeholder {color: white; }
+input[type="text"],[type="email"],[type="tel"],[type="password"]::-webkit-input-placeholder { color: white; }
+input[type="text"],[type="email"],[type="tel"],[type="password"]:-ms-input-placeholder { color: white; }
+input[type="text"],[type="email"],[type="tel"],[type="password"]::-ms-input-placeholder { color: white; }
+input[type="text"],[type="email"],[type="tel"],[type="password"]::placeholder { color: white; } 
+
+#inputUserName,#inputPassword
+{
+background-color: black;
+color: white;
+}
+
+
+.pagination li a {
+  background-color:transparent;
+  color: white;
+}
+
+.pagination li a:hover {
+  color: black;
+}
+
+.page-item.active .page-link {
+    background-color:transparent;
+    color: white;
+}
+
+
+.page-item.disabled .page-link {
+    background-color: black;
+    color: white;
+}
+
+.btn.btn-outline-secondary
+{
+  width: 100px;
+}
+
+h3
+{
+    margin-left: 20px;
+    text-shadow: 0.2em 0.2em 0.2em black; 
+}
+.my
+{
+  text-shadow: 0.1em 0.1em 0.1em black;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
